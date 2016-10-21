@@ -42,14 +42,14 @@ Route::get('/mypwds',function(){
  */
 Route::post('/mypwd',function(Request $request){
 	//验证表单
-	$validator=Validator::make($request-all(),[
-		'name'=>'required|max:255',
-	]);
-	if($validator->fails()){
-		return redirect('/mypwd')
-			->withInput()
-			->withErrors($validator);
-	}
+//	$validator=Validator::make($request-all(),[
+//		'name'=>'required|max:255',
+//	]);
+//	if($validator->fails()){
+//		return redirect('/mypwd')
+//			->withInput()
+//			->withErrors($validator);
+//	}
 	//添加密码
 	$mypwd = new Mypwd;
 	$mypwd->name = $request->name;
@@ -58,7 +58,7 @@ Route::post('/mypwd',function(Request $request){
 	$mypwd->remark = $request->remark;
 	$mypwd->save();
 
-	return redirect('/home');
+	return redirect('/mypwds');
 
 
 

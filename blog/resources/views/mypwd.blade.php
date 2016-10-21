@@ -10,7 +10,7 @@
 <!--Display Validation Errors-->
 @include('common.errors')
 <!--New Mypwd From-->
-<from action="/mypwd" method="POST" class="form-horizontal">
+<form action="mypwd" method="POST" class="form-horizontal">
 	{{csrf_field()}}
 	<!--Mypwd Name-->
 	<div class="form-group">
@@ -19,7 +19,8 @@
 		<input type="text" name="name" id="mypwd-name" class="form-control">
 		</div>
 	</div>	
-	<!--Mypwd User-->
+
+    <!--Mypwd User-->
 	<div class="form-group">
 		<label for="mypwd"class="col-sm-3 control-label">Username</label>
 		<div class="col-sm-6">
@@ -40,13 +41,12 @@
 		<input type="text" name="remark" id="mypwd-remark" class="form-control">
 		</div>
 	</div>
-	<!--Add Mypwd Button-->
-	<div class="form-group">
+    <!--Add Mypwd Button-->
+    <div class="form-group">
 	<div class="col-sm-offset-3 col-sm-6"> 
 	<button type="submit" class="btn btn-default">
 	<i class="fa fa-plus"></i>Add Mypwd
-	</button>
-	<a href='/mypwds'>显示密码列表</a>
+</button>
 	</div>
 	</div>
 </form>

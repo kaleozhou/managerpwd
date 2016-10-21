@@ -106,7 +106,6 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -166,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+		'Barryvdh\Debugbar\ServiceProvider',
         //
 
         /*

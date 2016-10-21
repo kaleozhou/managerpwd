@@ -10,7 +10,8 @@
 @if(count($mypwds)>0)
 		<div class="panel panel-default">
 			<div class="panel-heading">
-                Current Mypwds
+				Current Mypwds
+<a href='/mypwd'>继续添加</a>
             </div>
 
 			<div class="panel-body">
@@ -29,9 +30,15 @@
 							<!-- Mypwd Name -->															<td class="table-text">
                                 <div>{{$mypwd->name }}</div>
                             </td>
-                            <td>
-                                <!-- TODO: Delete Button -->
+                        	<!-- Mypwd username -->															<td class="table-text">
+                                <div>{{$mypwd->username }}</div>
+							</td>
+							<!-- Mypwd password -->															<td class="table-text">
+                                <div>{{$mypwd->password }}</div>
                             </td>
+                        	<!-- Mypwd remark -->															<td class="table-text">
+                                <div>{{$mypwd->remark }}</div>
+							</td>
                         </tr>
                     @endforeach
                     </tbody>

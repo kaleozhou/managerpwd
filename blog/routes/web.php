@@ -16,9 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
+	return view('home');
+});
+Route::get('/mypwd', function () {
 	return view('mypwd');
 });
-
 /*
  *
  *Display All Mypwd
@@ -26,7 +28,8 @@ Route::get('/home', function () {
  */
 Route::get('/mypwds',function(){
 	//
-	$mypwds=Mypwd::orderBy('create_at','asc')->get();
+	//$mypwds=Mypwd::orderBy('create_at','asc')->get();
+	$mypwds=Mypwd::orderBy('id','asc')->get();
 	return view('mypwds',[
 	'mypwds'=>$mypwds
 	
@@ -51,11 +54,12 @@ Route::post('/mypwd',function(Request $request){
 	$mypwd = new Mypwd;
 	$mypwd->name = $request->name;
 	$mypwd->password=$request->password;
-	$mypwd->user = $request->user;
+	$mypwd->username= $request->username;
 	$mypwd->remark = $request->remark;
 	$mypwd->save();
 
-	return redirect('/');
+	return redirect('/home');
+
 
 
 });

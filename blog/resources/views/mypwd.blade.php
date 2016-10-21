@@ -21,9 +21,9 @@
 	</div>	
 	<!--Mypwd User-->
 	<div class="form-group">
-		<label for="mypwd"class="col-sm-3 control-label">User</label>
+		<label for="mypwd"class="col-sm-3 control-label">Username</label>
 		<div class="col-sm-6">
-		<input type="text" name="user" id="mypwd-user" class="form-control">
+		<input type="text" name="username" id="mypwd-user" class="form-control">
 		</div>
 	</div>
 	<!--Mypwd Password-->
@@ -42,12 +42,13 @@
 	</div>
 	<!--Add Mypwd Button-->
 	<div class="form-group">
-<div class="col-sm-offset-3 col-sm-6"> 
-<button type="submit" class="btn btn-default">
+	<div class="col-sm-offset-3 col-sm-6"> 
+	<button type="submit" class="btn btn-default">
 	<i class="fa fa-plus"></i>Add Mypwd
-</button>
-</div>
-</div>
+	</button>
+	<a href='/mypwds'>显示密码列表</a>
+	</div>
+	</div>
 </form>
 	
                 </div>

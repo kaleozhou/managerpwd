@@ -8,7 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+					You are logged in!
+				<a href='/mypwd'>添加密码</a>
                 </div>
             </div>
         </div>

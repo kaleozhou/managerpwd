@@ -14,11 +14,12 @@ class CreateMypwdsTable extends Migration
     public function up()
     {
         Schema::create('mypwds', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('username');
-            $table->string('password');
-            $table->string('remark');
+
+			$table->increments('id');
+			$table->string('name',128);
+			$table->string('username',128);
+			$table->string('password',128);
+			$table->string('remark',256);
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 use App\Mypwd;
+use App\Http\Controllers\MypwdController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -26,47 +27,19 @@ Route::get('/mypwd', function () {
  *Display All Mypwd
  * 
  */
-Route::get('/mypwds',function(){
-	//
-	//$mypwds=Mypwd::orderBy('create_at','asc')->get();
-	$mypwds=Mypwd::orderBy('id','asc')->get();
-	return view('mypwds',[
-	'mypwds'=>$mypwds
-	
-	]);
-});
+Route::get('/mypwds','MypwdController@display');
 /*
  *Add a New mypwd
  *
  *
  */
-Route::post('/mypwd',function(Request $request){
-	//验证表单
-//	$validator=Validator::make($request-all(),[
-//		'name'=>'required|max:255',
-//	]);
-//	if($validator->fails()){
-//		return redirect('/mypwd')
-//			->withInput()
-//			->withErrors($validator);
-//	}
-	//添加密码
-	$mypwd = new Mypwd;
-	$mypwd->name = $request->name;
-	$mypwd->password=$request->password;
-	$mypwd->username= $request->username;
-	$mypwd->remark = $request->remark;
-	$mypwd->save();
-
-	return redirect('/mypwds');
-
-
-
-});
+Route::post('/mypwd','MypwdController@addpwd');
 /*
  *
  *Delete An Existing Mypwd
  */
 Route::delete('/mypwd/{id}',function($id){
-//
+    //
+    Mypwd::findOrFail($id)->delete();
+    return redirect('/mypwds');
 });

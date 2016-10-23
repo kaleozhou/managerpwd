@@ -7,11 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 				<div class="panel-body">
+<a href='/mypwd'>添加</a>
 @if(count($mypwds)>0)
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				Current Mypwds
-<a href='/mypwd'>继续添加</a>
             </div>
 
 			<div class="panel-body">
@@ -27,18 +27,31 @@
                     <tbody>
 					@foreach ($mypwds as $mypwd)
 						 <tr>
-							<!-- Mypwd Name -->															<td class="table-text">
+                            <!-- Mypwd Name -->	
+                            <td class="table-text">
                                 <div>{{$mypwd->name }}</div>
                             </td>
-                        	<!-- Mypwd username -->															<td class="table-text">
+                            <!-- Mypwd username -->
+                             <td class="table-text">
                                 <div>{{$mypwd->username }}</div>
 							</td>
-							<!-- Mypwd password -->															<td class="table-text">
+                            <!-- Mypwd password -->
+                             <td class="table-text">
                                 <div>{{$mypwd->password }}</div>
                             </td>
-                        	<!-- Mypwd remark -->															<td class="table-text">
+                            <!-- Mypwd remark -->
+                          <td class="table-text">
                                 <div>{{$mypwd->remark }}</div>
+                            </td> 
+                            <!-- Mypwd Delete -->
+                            <td class="table-text">
+                            <form action="/mypwds/{{ $mypwd->id }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button>Delete Mypwd</button>
+                            </form>
 							</td>
+
                         </tr>
                     @endforeach
                     </tbody>

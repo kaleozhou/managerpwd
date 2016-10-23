@@ -19,27 +19,26 @@ Route::get('/', function () {
 Route::get('/home', function () {
 	return view('home');
 });
+//mypwd route
 Route::get('/mypwd', function () {
-	return view('mypwd');
+	return view('/mypwds/add');
 });
-/*
- *
- *Display All Mypwd
- * 
- */
+// Display All Mypwd
 Route::get('/mypwds','MypwdController@display');
-/*
- *Add a New mypwd
- *
- *
- */
+//Add a New mypwd
 Route::post('/mypwd','MypwdController@addpwd');
-/*
- *
- *Delete An Existing Mypwd
- */
-Route::delete('/mypwd/{id}',function($id){
-    //
-    Mypwd::findOrFail($id)->delete();
-    return redirect('/mypwds');
+//Delete An Existing Mypwd
+Route::delete('/mypwds/{id}','MypwdController@delete');
+//card route
+Route::get('/card', function () {
+	return view('/cards/add');
 });
+// Display All card
+Route::get('/cards','CardController@display');
+//Add a New card
+Route::post('/card','CardController@addcard');
+//Modify a  card
+Route::post('/card_modify','CardController@modifycard');
+Route::get('/card_modify/{id}', 'CardController@modifycardget');
+//Delete An Existing card
+Route::delete('/cards/{id}','CardController@delete');

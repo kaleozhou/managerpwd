@@ -20,6 +20,7 @@ class CreateMypwdsTable extends Migration
 			$table->string('username',128);
 			$table->string('password',128);
 			$table->string('remark',256);
+			$table->integer('user_id')->index();
             $table->timestamps();
         });
     }

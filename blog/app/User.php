@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Mypwd;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     *      * Get all of the mypwds for the user.
+     */
+        public function mypwds()
+        {
+            return $this->hasMany(Mypwd::class);
+        }
+    /**
+     *      * Get all of the cards for the user.
+     */
+        public function cards()
+        {
+            return $this->hasMany(Card::class);
+        }
+
 }

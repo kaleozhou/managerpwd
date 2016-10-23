@@ -9,7 +9,10 @@
 
                 <div class="panel-body">
 					You are logged in!
-				<a href='/mypwd'>添加密码</a>
+				<a href='/mypwd'>添加密码表</a>
+				<a href='/mypwds'>我的密码表</a>
+				<a href='/card'>添加银行卡</a>
+				<a href='/cards'>我的银行列表</a>
                 </div>
             </div>
         </div>

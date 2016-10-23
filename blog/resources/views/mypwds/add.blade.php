@@ -10,7 +10,7 @@
 <!--Display Validation Errors-->
 @include('common.errors')
 <!--New Mypwd From-->
-<form action="mypwd" method="POST" class="form-horizontal">
+<form action="/mypwd" method="POST" class="form-horizontal">
 	{{csrf_field()}}
 	<!--Mypwd Name-->
 	<div class="form-group">
